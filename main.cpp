@@ -16,48 +16,6 @@ using namespace std;
 #define training_set_size 60000
 #define test_set_size 10000
 
-int ceil(float a)
-{
-    cout<<a<<endl;
-    if((int)a != a)
-    {
-        return (int)a + 1;
-    }
-    return (int)a;
-}
-
-void ReadBMP(char* filename, vector<vector<float>> &v)
-{
-    FILE* f = fopen(filename, "rb");
-
-    if(f == NULL)
-        throw "Argument Exception";
-
-    unsigned char info[54];
-    fread(info, sizeof(unsigned char), 54, f);
-
-    int width = *(int*)&info[18];
-    int height = *(int*)&info[22];
-    int row_padded = (width*3 + 3) & (~3);
-    unsigned char* data = new unsigned char[row_padded];
-    unsigned char tmp;
-
-    v = vector<vector<float>>(height, vector<float> (width));
-    int r = v.size() - 1;
-    for(int i = 0; i < height; i++)
-    {
-        fread(data, sizeof(unsigned char), row_padded, f);
-        int c = 0;
-        for(int j = 0; j < width*3; j += 3)
-        {
-            v[r][c] = float((int)data[j]+(int)data[j+1]+(int)data[j+2])/ (3.0 * 255);
-            c++;
-        }
-        r--;
-    }
-    fclose(f);
-}
-
 int main()
 {
     cout << "******************************************\nDigit Recogniser - Created by Sayan Bakshi\n******************************************\n\n";
