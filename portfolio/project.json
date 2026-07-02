@@ -1,0 +1,32 @@
+{
+  "_comment": "Powers this repo's card on banjobyster.github.io. See README.md in this folder. Wrap **words** to accent them.",
+  "schemaVersion": 1,
+
+  "title": "Digit Recognizer",
+  "tagline": "Handwritten digit classifier",
+  "description": "A simple **neural** network that can recognize handwritten digits.",
+  "highlights": [
+    "Neural network built from scratch",
+    "Recognizes handwritten digits"
+  ],
+
+  "category": "Machine Learning",
+  "tags": ["Python", "Neural Network"],
+  "status": "complete",
+  "year": null,
+  "role": "Solo",
+
+  "demo": "",
+  "repo": null,
+  "video": "",
+  "article": "",
+
+  "cover": "cover.png",
+  "thumbnail": "",
+  "gallery": [],
+
+  "order": 40,
+  "featured": true,
+  "pinned": false,
+  "accent": "rgba(164, 131, 255, 0.9)"
+}
